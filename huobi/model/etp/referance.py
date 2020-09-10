@@ -8,8 +8,6 @@ class ETPReferance:
        Reference data of ETP
 
        :member
-           code: Status code.
-           message: Error Message (if any).
            etpName: ETP Code.
            displayName: ETP display name.
            creationQuota:
@@ -26,8 +24,6 @@ class ETPReferance:
        """
 
     def __init__(self):
-        self.code = 0
-        self.message = ""
         self.etpName = ""
         self.displayName = ""
         self.creationQuota = {}
@@ -51,8 +47,6 @@ class ETPReferance:
 
     def print_object(self, format_data=""):
         from huobi.utils.print_mix_object import PrintBasic
-        PrintBasic.print_basic(self.code, format_data + "Code")
-        PrintBasic.print_basic(self.message, format_data + "Message")
         PrintBasic.print_basic(self.etpName, format_data + "ETP Name")
         PrintBasic.print_basic(self.displayName, format_data + "Display Name")
         PrintBasic.print_basic(self.creationQuota, format_data + "Creation Quota")

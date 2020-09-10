@@ -3,13 +3,13 @@ from huobi.constant import *
 from huobi.utils.json_parser import default_parse_data_as_long
 
 
-class PostCreateOrderService:
+class PostRedemptionETPService:
 
     def __init__(self, params):
         self.params = params
 
     def request(self, **kwargs):
-        channel = "/v1/order/orders/place"
+        channel = "/v2/etp/redemption"
 
         def parse(dict_data):
             return default_parse_data_as_long(dict_data, None)
