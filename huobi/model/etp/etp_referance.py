@@ -2,7 +2,7 @@ from huobi.utils.json_parser import fill_obj
 from huobi.model.etp.creation_quota import CreationQuota
 
 
-class ETPReferance:
+class ETPReference:
 
     """
        Reference data of ETP
@@ -40,7 +40,7 @@ class ETPReferance:
 
     @staticmethod
     def json_parse(json_data):
-        ref = fill_obj(json_data, ETPReferance)
+        ref = fill_obj(json_data, ETPReference)
         creation_quota = fill_obj(ref.CreationQuota, CreationQuota)
         ref.creationQuota = creation_quota
         return ref
