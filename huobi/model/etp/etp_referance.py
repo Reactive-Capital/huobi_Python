@@ -41,8 +41,7 @@ class ETPReference:
     @staticmethod
     def json_parse(json_data):
         ref = fill_obj(json_data, ETPReference)
-        creation_quota = fill_obj(ref.CreationQuota, CreationQuota)
-        ref.creationQuota = creation_quota
+        ref.creationQuota = CreationQuota.json_parse(ref.creationQuota)
         return ref
 
     def print_object(self, format_data=""):

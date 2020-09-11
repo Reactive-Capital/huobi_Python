@@ -1,3 +1,4 @@
+from huobi.utils.json_parser import fill_obj
 
 class CreationQuota:
     """
@@ -14,6 +15,14 @@ class CreationQuota:
         self.minCreationValue = 0
         self.dailyCreationValue = 0
         self.creationCurrency = ""
+
+    @staticmethod
+    def json_parse(json_data):
+        ref = fill_obj(json_data, CreationQuota)
+        ref.maxCreationValue = int(ref.maxCreationValue)
+        ref.minCreationValue = int(ref.minCreationValue)
+        ref.dailyCreationValue = int(ref.dailyCreationValue)
+        return ref
 
     def print_object(self, format_data=""):
         from huobi.utils.print_mix_object import PrintBasic

@@ -18,6 +18,8 @@ class ETPRedemption:
     @staticmethod
     def json_parse(json_data):
         creation = fill_obj(json_data, ETPRedemption)
+        creation.transactId = int(creation.transactId)
+        creation.transactTime = int(creation.transactTime)
         return creation
 
     def print_object(self, format_data=""):
